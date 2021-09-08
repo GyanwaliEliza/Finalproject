@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Austin 311 Calls</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 jumbotron text-center" style="color:rgb(164, 208, 203)">
+        <h1 style="color:rgb(95, 8, 157)">Austin 311 Calls</h1>
+        <p style="color:blue">Use the interactive charts/maps below to explore the dataset</p>
+      </div>
+    </div>
+    <div class ="row">
+      <div class = "col-md-5 text-center bg-grey">
+        <p>Here we have a dashboard displaying 311 calls in Austin over the past several years. Use the filters below to see how the data </p>
+      </div>
+      
+    </div>
+    
+    <div class="row">
+      <div class="col-md-2">
+        <div class="well">
+          <h5>Filter by Department Types</h5>
+          <!-- <select id="selDataset"></select> -->
+          <select id="selDataset" onchange="optionChanged(this.value)"></select>
+        </div>
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Summary</h3>
+          </div>
+          <div id="sample-metadata" class="panel-body"></div>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <div id="bar"></div>
+      </div>
+      <div class="col-md-5">
+        <div id="gauge"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div id="bubble"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="charts.js"></script>
+
+</body>
+
+</html>

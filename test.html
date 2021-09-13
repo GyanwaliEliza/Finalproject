@@ -1,5 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+  
+<style>
+  .iframe-container {
+    width: 100px;
+    height: 50px;
+    margin: 0 auto;
+    display: block;
+    border-style:none;
+}
+
+</style>
 
 <head>
   <meta charset="UTF-8">
@@ -7,6 +18,10 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Austin 311 Calls</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!--LEAFLET-->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+  integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+  crossorigin=""/>
 </head>
 
 <body>
@@ -14,8 +29,8 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12 jumbotron text-center" style="color:rgb(164, 208, 203)">
-        <h1 style="color:rgb(95, 8, 157)">Austin 311 Calls</h1>
-        <p style="color:blue">Use the interactive charts/maps below to explore the dataset</p>
+        <h1 style="color:rgb(91, 78, 211)">Austin 311 Calls</h1>
+        <p style="color:rgb(71, 123, 220)">Use the interactive charts/maps below to explore the dataset</p>
       </div>
     </div>
     <div class ="row">
@@ -24,7 +39,7 @@
       </div>
       
     </div>
-    
+
     <div class="row">
       <div class="col-md-2">
         <div class="well">
@@ -40,6 +55,7 @@
         </div>
       </div>
       <div class="col-md-5">
+        <h5> ** PLACEHOLDER ** ML Model Results, Graphic, Model Breakdown</h5>
         <div id="bar"></div>
       </div>
       <div class="col-md-5">
@@ -48,10 +64,29 @@
     </div>
     <div class="row">
       <div class="col-md-12">
+        <h5> ** PLACEHOLDER ** Call Composition Breakdown/ EDA to refine purpose and answer</h5>
         <div id="bubble"></div>
       </div>
     </div>
+
+     <!--Places mapbox map in an iframe for user to interact with-->
+    <div class="iframe-container">     
+    <table>
+      <tbody>
+        <tr>
+          <h5>Map of Calls</h5>
+          <td style="text-align-last: center; border: none">
+            <!-- This will eventually reference our map_.html in order to load in our custom map instead of this placeholder-->
+            <iframe src="https://leafletjs.com/examples/quick-start/example-overlays.html" width="600" height="400">
+
+            </iframe>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
   </div>
+
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>

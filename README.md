@@ -41,6 +41,9 @@
   - Street Number + Street Name:
     - Similar to the location data, these number of potential variables negatively impacted the model accuracy. 
 
+### Train, Test, Split
+![Image of Train, Test, Split](https://github.com/GyanwaliEliza/Finalproject/blob/main/Train_Test_Split.png)
+
 ## Communication
 #### Communication done in Slack & in breakout rooms during class time. 
 

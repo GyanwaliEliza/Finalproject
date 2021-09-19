@@ -43,6 +43,10 @@
 
 ### Train, Test, Split
 ![Image of Train, Test, Split](https://github.com/GyanwaliEliza/Finalproject/blob/main/Train_Test_Split.png)
+- Using the scikit-learn "train_test_split" module, the final DataFrame was split into random train and test subsets that could then be input into the Balanced Random Forest Classifier model
+
+### Explanation of Model Choice
+- 
 
 ## Communication
 #### Communication done in Slack & in breakout rooms during class time. 

@@ -11,6 +11,17 @@
 #### Data was gathered from "The City of Austin" website
 #### https://data.austintexas.gov/Utilities-and-City-Services/Austin-311-Public-Data/xwdj-i9he/data
 
+## Data Exploration
+EDA was done with a combination of Tableau Desktop and Python, and is summarized within the "eda write up." 
+
+As a quick summary, I found that calls over time seemed to be increasing until the pandemic's disruption of normal activities. 
+
+Further, within the year itself the spring and summer months see the largest call volume. 
+
+As far as responsive departments, Austin Code receives the most calls, followed by Animal Services and Austin Transportation. Although the "Complaint Types" are not evenly distributed, after summarizing by department response we saw that the distribution is relatively even. 
+
+Finally, when it comes to Response Time, I found that generally calls are closed quickly, with 75% of all calls closed within 5 days. 
+
 ## Machine Learning Model
 ### Preliminary Data Preprocessing
 - Because we are focused on 311 ticket completion time, the first step in our data preprocessing was to convert the data in the "sr_created_date" and "sr_closed_date" columns to the DateTime data type using the pandas.to_datetime function. These new DateTime values were assigned to new "Created Date" and "Closed Date" columns respectively. Another new "Request Year" column was created using the year DateTime information from the "Created Date" column. We then filtered the entire DataFrame using the "Request Year" column to only include those 311 tickets that were created in the year 2019. This large reduction in the dataset was to create a dataframe that had a manageable number of rows given the RAM constraints of our computers. A "Total Seconds" column was created that calculated the total number of seconds each ticket remained open. The DataFrame was then filtered again using the "Total Seconds" column to include only those 311 tickets that were open for < 31540000 seconds (~ 1 year). This was necessary to exclude some extremely large outliers in the dataset. 

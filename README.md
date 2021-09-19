@@ -28,6 +28,19 @@
 
 ![Image of 311 Final Dataframe](https://github.com/GyanwaliEliza/Finalproject/blob/main/311_Final_Dataframe.png)
 
+### Preliminary Feature Engineering and Selection
+- Please refer to the file "MachineLearningModel_Seg1.ipynb" for the full scope and code of the feature engineering/selection process. 
+- Using a practice sub-dataset from the larger 311 Public Data with only the first 1000 rows, the machine learning model was run to gather preliminary outcomes. 
+- Feature importances were provided by the fitted attribute ".feature_importances_", which computes the features as the mean and standard deviation of the accumulation of the impurity decrease within each decision tree of Balanced Random Forest Classifier. Features with high importance can be considered significant enough to improve the accuracy of the machine learning model. 
+- The following feature columns consistently had negligible feature importance values and were removed from the final DataFrame:
+  - Service Request (SR) Number: 
+    - An arbitrary number assigned to each 311 ticket.
+  - Map Page + Map Tile + State Plane X Coordinate + State Plane Y Coordinate + Latitude Coordinate + Longitude Coordinate + (Latitude.Longitude) + SR Location: 
+    - These location data vary for every single ticket and the number of potential variables meant they all negatively impacted the model accuracy. 
+    - The inclusion of these variables significantly increased the script run time and often required more RAM than was available.
+  - Street Number + Street Name:
+    - Similar to the location data, these number of potential variables negatively impacted the model accuracy. 
+
 ## Communication
 #### Communication done in Slack & in breakout rooms during class time. 
 
@@ -40,6 +53,3 @@
 #### Jordan: https://github.com/GyanwaliEliza/Finalproject/tree/jordan_branch
 #### Mateo: https://github.com/GyanwaliEliza/Finalproject/tree/Mateo_Branch
 #### Eliza: https://github.com/GyanwaliEliza/Finalproject/tree/eliza_branch
-
-
-

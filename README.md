@@ -26,6 +26,8 @@
 
 - The final training DataFrame used for the machine learning model was as follows:
 
+![Image of 311 Final Dataframe](https://github.com/GyanwaliEliza/Finalproject/blob/main/311_Final_Dataframe.png)
+
 ## Communication
 #### Communication done in Slack & in breakout rooms during class time. 
 

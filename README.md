@@ -46,7 +46,8 @@
 - Using the scikit-learn "train_test_split" module, the final DataFrame was split into random train and test subsets that could then be input into the Balanced Random Forest Classifier model
 
 ### Explanation of Model Choice
-- We wanted to use a random forest classifier for our machine learning model since they run efficiently on extremely large datasets. These algorithms are also robust to nonlinear data and can handle large numbers of input variables without deletion.  
+- We wanted to use a Balanced Random Forest Classifier for our machine learning model since they run efficiently on extremely large datasets. These algorithms are also robust to nonlinear data and can handle large numbers of input variables without deletion.
+- Then main disadvantage of Random Forest algorithms is that they cannot accurately extrapolate new data for regression problems. They can only make classification predictions that are bound by the highest and lowest labels in the training data. For our project, the machine learning model would likely fall apart for ticket response times longer than 1 year since this was the upper bound we created for the DataFrame.    
 
 ## Communication
 #### Communication done in Slack & in breakout rooms during class time. 

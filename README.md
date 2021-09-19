@@ -20,9 +20,11 @@
 ![Image of 311 Types](https://github.com/GyanwaliEliza/Finalproject/blob/main/311_types.png)
 
 - Each 311 type was then assigned a department descriptor: Austin Code, Animal Services, Public Works, Austin Resource Recovery, Austin Transportation, Watershed Check, Parks and Recreation, Austin Water, Public Health, Housing and Planning, Austin Fire. These descriptors were added to a new "Department" column. 
-- Next we had to drop several DataFrame columns that contained information that would not be pertinent to our final machine learning model. These column feature reductions were based on our preliminary machine learning testing, which can be found in the file "MachineLearningModel_Seg1.ipynb". 
+- Next we had to drop several DataFrame columns that contained information that would not be pertinent to our final machine learning model. These column feature reductions were based on our preliminary machine learning testing, which can be found in the file "MachineLearningModel_Seg1.ipynb". When calculating feature importance, the data in these columns was found to be negligible and considerably slowed down our processing time since most of these columns contained text strings of various lenghts. 
 
 ![Image of 311 Drop Columns](https://github.com/GyanwaliEliza/Finalproject/blob/main/311_Drop_Columns.png)
+
+- The final training DataFrame used for the machine learning model was as follows:
 
 ## Communication
 #### Communication done in Slack & in breakout rooms during class time. 

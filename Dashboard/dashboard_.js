@@ -1,6 +1,6 @@
 function init() {
 
-
+//  buildMap();
 
 console.log("Test")
 

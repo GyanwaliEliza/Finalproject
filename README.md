@@ -38,13 +38,15 @@ Finally, when it comes to Response Time, I found that generally calls are closed
 
 ![Image of 311 Drop Columns](https://github.com/GyanwaliEliza/Finalproject/blob/main/311_Drop_Columns.png)
 
-- Median Family Income (MFI) and population data for the greater Austin metropolitan area was imported from data.census.gov. Data from this new table was eliminated until the following DataFrame was created:
+- Median Family Income (MFI) and population data for the greater Austin metropolitan area was imported from data.census.gov. Data from these new tables were dropped and joined until the following joined_df DataFrame was created:
 
-![Image of Census Data](
+![Image of Census Data](https://github.com/GyanwaliEliza/Finalproject/blob/main/Census_Data.png)
 
+- The joined_df and training_df DataFrame were then joined on the "ZipCode" column to create a new training_df with the Austin census data with "MedianFamilyIncome" and "TotalPopulation" columns. 
+- Our last preprocessing step was to assign descriptors to the Median Family Income data points. 80% of the median family income was $57,260 and 120% of the median family income was $85,891. The descriptors in the "MedianFamilyIncome" column were transformed as such: <80% MFI = Below Median, 80%-120% MFI = Median, >120% MFI = Above Median. 
 - The final training DataFrame used for the machine learning model was as follows:
 
-![Image of 311 Final Dataframe](https://github.com/GyanwaliEliza/Finalproject/blob/main/311_Final_Dataframe.png)
+![Image of 311 Final Dataframe]()
 
 ### Preliminary Feature Engineering and Selection
 - Please refer to the file "MachineLearningModel_Seg1.ipynb" for the full scope and code of the feature engineering/selection process. 

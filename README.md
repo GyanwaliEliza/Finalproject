@@ -38,6 +38,10 @@ Finally, when it comes to Response Time, I found that generally calls are closed
 
 ![Image of 311 Drop Columns](https://github.com/GyanwaliEliza/Finalproject/blob/main/311_Drop_Columns.png)
 
+- Median Family Income (MFI) and population data for the greater Austin metropolitan area was imported from data.census.gov. Data from this new table was eliminated until the following DataFrame was created:
+
+![Image of Census Data](
+
 - The final training DataFrame used for the machine learning model was as follows:
 
 ![Image of 311 Final Dataframe](https://github.com/GyanwaliEliza/Finalproject/blob/main/311_Final_Dataframe.png)

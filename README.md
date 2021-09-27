@@ -77,11 +77,11 @@ Finally, when it comes to Response Time, I found that generally calls are closed
 ### Accuracy Score
 - The current accuracy score for our machine learning model is 75%.
 
-![Image of Accuracy Score](
+![Image of Accuracy Score](https://github.com/GyanwaliEliza/Finalproject/blob/main/Accuracy_Score.png)
 
 - The model also has well balanced precision and recall scores for both "Quick Response" and "Slow Response" calls, with an average score of 75% each. 
 
-![Image of Classification Table](
+![Image of Classification Report](https://github.com/GyanwaliEliza/Finalproject/blob/main/Classification_Report.png)
 
 - Overall, this model has adequate predictive power for future 311 call data but has room for improvements with further feature engineering. 
 

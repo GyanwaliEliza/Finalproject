@@ -27,8 +27,6 @@ function init() {
 
     master_data = data;
 
-    alert("Retrieved " + data.length + " records from the dataset!");
-
     var sr_type = [];
 
     data.forEach( (call) => { 
@@ -41,6 +39,7 @@ function init() {
     var unique_sr_type = Array.from(new Set(sr_type))
     console.log(unique_sr_type)
 
+    console.log(master_data);
 
     // For each call collect the method received and populate the dropdown
     unique_sr_type.forEach( (call) => {
@@ -60,10 +59,71 @@ init();
    console.log(new_call_type);
 
    data_displayed = master_data.filter(call => call.sr_method_received_desc == new_call_type);
-
+   
    buildMap(data_displayed);
+   buildSummaryTable(data_displayed);
 
-   console.log(other_layer)
+ }
+
+ function cityDistrictCounts(data){
+   city_district_1 = 0;
+   city_district_2 = 0;
+   city_district_3 = 0;
+   city_district_4 = 0;
+   city_district_5 = 0;
+   city_district_6 = 0;
+   city_district_7 = 0;
+   city_district_8 = 0;
+   city_district_9 = 0;
+   city_district_10 = 0;
+   data.forEach( (value) => {
+     if(value.sr_location_council_district == "1"){
+       city_district_1 += 1;
+     }else if (value.sr_location_council_district == "2"){
+       city_district_2 += 1;
+     }else if (value.sr_location_council_district == "3"){
+      city_district_3 += 1;
+     }else if (value.sr_location_council_district == "4"){
+      city_district_4 += 1;
+     }else if (value.sr_location_council_district == "5"){
+      city_district_5 += 1;
+    }else if (value.sr_location_council_district == "6"){
+      city_district_6 += 1;
+    } else if (value.sr_location_council_district == "7"){
+      city_district_7 += 1;
+    } else if (value.sr_location_council_district == "8"){
+      city_district_8 += 1;
+    } else if (value.sr_location_council_district == "9"){
+      city_district_9 += 1;
+    } else if (value.sr_location_council_district == "10"){
+      city_district_10 += 1;
+    }
+   })
+ }
+ function buildSummaryTable(data){ 
+
+  cityDistrictCounts(data)
+
+   number_of_requests = Object.keys(data).length;
+
+   
+
+   var PANEL = d3.select("#sample-metadata");
+
+   PANEL.html("");
+
+   PANEL.append("h6").text(`Number of Requests: ${number_of_requests}`);
+   PANEL.append("h6").text(`District 1 Requests: ${city_district_1}`);
+   PANEL.append("h6").text(`District 2 Requests: ${city_district_2}`);
+   PANEL.append("h6").text(`District 3 Requests: ${city_district_3}`);
+   PANEL.append("h6").text(`District 4 Requests: ${city_district_4}`);
+   PANEL.append("h6").text(`District 5 Requests: ${city_district_5}`);
+   PANEL.append("h6").text(`District 6 Requests: ${city_district_6}`);
+   PANEL.append("h6").text(`District 7 Requests: ${city_district_7}`);
+   PANEL.append("h6").text(`District 8 Requests: ${city_district_8}`);
+   PANEL.append("h6").text(`District 9 Requests: ${city_district_9}`);
+   PANEL.append("h6").text(`District 10 Requests: ${city_district_10}`);
+
  }
 
  function onEachFeature(feature, layer) {

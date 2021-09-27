@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        .iframe-container {
+          width: 100px;
+          height: 50px;
+          margin: 0 auto;
+          display: block;
+          border-style:none;
+        }
+      
+        body {
+          background-image: url('dot-grid.png');
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          background-size: 100% 100%;
+        }
+      
+      </style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Austin 311 Calls Analysis</title>
+   
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!--LEAFLET-->
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""/>
+  
+         <!-- Make sure you put this AFTER Leaflet's CSS -->
+         <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+         integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+         crossorigin=""></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+          <div class="col-md-12 jumbotron text-center" style="color:rgb(164, 208, 203)">
+            <h1 style="color:rgb(91, 78, 211)">Austin 311 Calls</h1>
+            <p style="color:rgb(71, 123, 220)">Use the interactive charts/maps below to explore the dataset</p>
+          </div>
+        </div>
+    <div class ="row">
+      <div class = "col-md-5 text-left bg-grey">
+        <p><a href="test.html">Back To Map</a></p>
+        <p><a href="eda.html">To Exploratory Data Analysis</a></p>
+        <p></p>
+        <p></p>
+      </div>
+      <div class="col-md-12">
+          <h4>Model</h4>
+          <h5>Purpose: </h5>
+          <p>We wanted to develop a model that could help predict the time needed to fuffil a service request.</p>
+          <h5>Type: Balanced Random Forest Classifier</h5>
+          <p>Pros: Very efficient with large datasets and nonlinear data.</p>
+          <p>Cons: Cannot accurately extrapolate new data for regression problems</p>
+          <p>      Can only make classification predictions that are bound by the highest and lowest labels in the training data</p>
+          
+          <h4>Results</h4>
+          <img src="../Accuracy_Score.png" alt="" width="200" height="200">
+
+      </div>
+      
+    </div>
+
+
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src='https://d3js.org/d3.v4.min.js' charset="utf-8"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src ="config.js"></script>
+  <script src="map_script.js"></script>
+  <script src="dashboard_.js"></script>
+</body>
+</html>

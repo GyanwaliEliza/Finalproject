@@ -46,7 +46,7 @@ Finally, when it comes to Response Time, I found that generally calls are closed
 - Our last preprocessing step was to assign descriptors to the Median Family Income data points. 80% of the median family income was $57,260 and 120% of the median family income was $85,891. The descriptors in the "MedianFamilyIncome" column were transformed as such: <80% MFI = Below Median, 80%-120% MFI = Median, >120% MFI = Above Median. 
 - The final training DataFrame used for the machine learning model was as follows:
 
-![Image of 311 Final Dataframe]()
+![Image of Final Dataframe](https://github.com/GyanwaliEliza/Finalproject/blob/main/Final_Training_DataFrame.png)
 
 ### Preliminary Feature Engineering and Selection
 - Please refer to the file "MachineLearningModel_Seg1.ipynb" for the full scope and code of the feature engineering/selection process. 

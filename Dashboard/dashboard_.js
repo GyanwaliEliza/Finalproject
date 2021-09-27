@@ -56,12 +56,16 @@ init();
 
  function optionChanged(new_call_type) {
    // Fetch new data each time a new filter is selected
+   var myframe = document.getElementsByTagName("iframe")[0];
+   myframe.id = "iframeid"
    console.log(new_call_type);
 
    data_displayed = master_data.filter(call => call.sr_method_received_desc == new_call_type);
    
    buildMap(data_displayed);
    buildSummaryTable(data_displayed);
+   document.getElementById('iframeid').src = document.getElementById('iframeid').src
+
 
  }
 

@@ -67,7 +67,23 @@ Finally, when it comes to Response Time, I found that generally calls are closed
 
 ### Explanation of Model Choice
 - We wanted to use a Balanced Random Forest Classifier for our machine learning model since they run efficiently on extremely large datasets. These algorithms are also robust to nonlinear data and can handle large numbers of input variables without deletion.
-- Then main disadvantage of Random Forest algorithms is that they cannot accurately extrapolate new data for regression problems. They can only make classification predictions that are bound by the highest and lowest labels in the training data. For our project, the machine learning model would likely fall apart for ticket response times longer than 1 year since this was the upper bound we created for the DataFrame.    
+- Then main disadvantage of Random Forest algorithms is that they cannot accurately extrapolate new data for regression problems. They can only make classification predictions that are bound by the highest and lowest labels in the training data. For our project, the machine learning model would likely fall apart for ticket response times longer than 1 year since this was the upper bound we created for the DataFrame. 
+
+### Model Training
+- The original training for this model can be found in the file "MachineLearningModel_Seg1.ipynb". The same Austin 311 dataset was used for this training, albeit with far less preprocessing and feature engineering. At this point, we were only training the model on "Open" vs. "Closed" 311 tickets and the result was 93% accuracy. This was a good benchmark indicating the Balanced Random Forest Classifier was a good selection for even more complex modeling. 
+- Our next iteration for the model was looking at our chosen project question of predicting fast vs. slow 311 call response times. After running the model several times, we were presented with an unrealistic 100% accuracy score. We then realized we had to drop the "Total Seconds" column because it was so intricately linked to the "Response Time" column. After this correction, our model has achieved a more realistic accuracy score while still achieving our project goals. 
+- Future model training would hopefully include 311 call data for more years than 2019, but we are still limited by the processing power of our computers to add that additional data. 
+
+### Accuracy Score
+- The current accuracy score for our machine learning model is 75%.
+
+![Image of Accuracy Score](
+
+- The model also has well balanced precision and recall scores for both "Quick Response" and "Slow Response" calls, with an average score of 75% each. 
+
+![Image of Classification Table](
+
+- Overall, this model has adequate predictive power for future 311 call data but has room for improvements with further feature engineering. 
 
 ## Communication
 #### Communication done in Slack & in breakout rooms during class time. 

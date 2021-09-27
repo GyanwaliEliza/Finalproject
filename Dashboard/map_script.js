@@ -13,9 +13,10 @@ function buildMap(data){
 
         data.forEach( (call) => {
 
-            console.log(call.sr_location_lat, call.sr_location_long)
+            // console.log(call.sr_location_lat, call.sr_location_long)
 
             if (parseFloat(call.sr_location_lat) && parseFloat(call.sr_location_long)){
+
                     let mark = L.marker([parseFloat(call.sr_location_lat), parseFloat(call.sr_location_long)], {
                     color: 'red',
                     fillColor: '#f03',
@@ -25,8 +26,6 @@ function buildMap(data){
 
                     mark.addTo(mymap);
 
-                    console.log(mark);
-                    console.log(mymap);
             }
 
         })

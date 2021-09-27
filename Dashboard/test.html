@@ -8,7 +8,14 @@
     margin: 0 auto;
     display: block;
     border-style:none;
-}
+  }
+
+  body {
+    background-image: url('dot-grid.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+  }
 
 </style>
 
@@ -41,8 +48,10 @@
       </div>
     </div>
     <div class ="row">
-      <div class = "col-md-5 text-center bg-grey">
-        <p>Here we have a dashboard displaying 311 calls in Austin over the past several years. Use the filters below to see how the data </p>
+      <div class = "col-md-5 text-left bg-grey">
+        <p>Here we have a dashboard displaying 311 calls in Austin over the past several years. </p>
+        <p>We wanted to develop a model that could help predict the time needed to fuffil a service request. To learn more about our model and initial analysis click <a href="eda.html">here.</a></p>
+        <p>Use the filters below to see the frequency of different ways Austin receives Service Requests.</p>
       </div>
       
     </div>
@@ -50,7 +59,7 @@
     <div class="row">
       <div class="col-md-2">
         <div class="well">
-          <h5>Filter by Department Types</h5>
+          <h5>Filter by Request Types</h5>
           <!-- <select id="selDataset"></select> -->
           <select id="selDataset" onchange="optionChanged(this.value)"></select>
         </div>
@@ -62,8 +71,20 @@
         </div>
       </div>
       <div class="col-md-5">
-        <h5> **PLACEHOLDER** ML Model Results, Graphic, Model Breakdown</h5>
-        <div id="bar"></div>
+     <!--Places mapbox map in an iframe for user to interact with-->
+     <div class="iframe-container">     
+      <table>
+        <tbody>
+          <tr>
+            <td style="text-align-last: right; border: none">
+              <!-- This will eventually reference our map_.html in order to load in our custom map instead of this placeholder-->
+              <iframe src="map_.html" width="600" height="420">
+              </iframe>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
       </div>
       <div class="col-md-5">
         <div id="gauge"></div>
@@ -71,28 +92,10 @@
     </div>
     <div class="row">
       <div class="col-md-12">
-        <h5> ** PLACEHOLDER ** Call Composition Breakdown/ EDA to refine purpose and answer</h5>
         <div id="bubble">
-          <img src="calls_by_month.png" alt="">
+  
         </div>
       </div>
-    </div>
-
-     <!--Places mapbox map in an iframe for user to interact with-->
-    <div class="iframe-container">     
-    <table>
-      <tbody>
-        <tr>
-          <h5>Map of Calls</h5>
-          <td style="text-align-last: center; border: none">
-            
-            <!-- This will eventually reference our map_.html in order to load in our custom map instead of this placeholder-->
-            <iframe src="map_.html" width="600" height="400">
-            </iframe>
-          </td>
-        </tr>
-      </tbody>
-    </table>
     </div>
   </div>
   <div id="mapid"></div> 

@@ -1,26 +1,31 @@
 # Finalproject
 
 ## Description
-#### Using data acquired from the City of Austin, our team is aiming to create a classification model which will predict 311 call's response time. 
+#### Using data acquired from the City of Austin, our team is aiming to create a classification model which will predict 311 service request response time. 
 
 ## Goals
 #### Create a machine learning model to predict the response times for a 311 call.
-#### See how response time is affected by the type of complaints..
+#### See how response time is affected by a number of factors, including responsive department, time of request, and zip code.
 
 ## Data Source
-#### Data was gathered from "The City of Austin" website
+#### Data was gathered from "The City of Austin" website, as well as the Census Data Portal.
 #### https://data.austintexas.gov/Utilities-and-City-Services/Austin-311-Public-Data/xwdj-i9he/data
+#### https://data.census.gov/cedsci/
 
 ## Data Exploration
-EDA was done with a combination of Tableau Desktop and Python, and is summarized within the "eda write up." 
+EDA was done with a combination of Tableau Desktop and Python, and sought to answer primarily the following questions:
+1. How has request volume changed over time, year-to-year, month-to-month and hour-to-hour?
+![Requests by Year](https://raw.githubusercontent.com/GyanwaliEliza/Finalproject/main/Calls_by_year.png)
+![Requests by Month](https://raw.githubusercontent.com/GyanwaliEliza/Finalproject/main/Calls_by_month.png)
+![Requests by Hour](https://raw.githubusercontent.com/GyanwaliEliza/Finalproject/main/Calls_by_Hour%20(2).png)
+3. What are the most common request types?
+![Requests by Type](https://raw.githubusercontent.com/GyanwaliEliza/Finalproject/main/circle/eda_graphs/calls_by_type.png)
+5. What departments have to respond to service requests the most?
+![Requests by Department](https://raw.githubusercontent.com/GyanwaliEliza/Finalproject/main/Calls_by_Dept.png)
+7. How quickly do service requests move to “Closed” status? 
+  - 75% of all Requests are reported as "Closed" within 5 days
 
-As a quick summary, I found that calls over time seemed to be increasing until the pandemic's disruption of normal activities. 
-
-Further, within the year itself the spring and summer months see the largest call volume. 
-
-As far as responsive departments, Austin Code receives the most calls, followed by Animal Services and Austin Transportation. Although the "Complaint Types" are not evenly distributed, after summarizing by department response we saw that the distribution is relatively even. 
-
-Finally, when it comes to Response Time, I found that generally calls are closed quickly, with 75% of all calls closed within 5 days. 
+Further analysis was done on the Zip Code level, seeking to answer both which Zip Codes make the most service requests, and are there any differences from the patterns established above. Although there were some minor variations, in the most meaningful way the patterns held true. However, once 2019 American Community Survey census data was added and Zip Codes were categorized between "Above 120% Citywide Median Family Income", "80-120% Citywide MFI", and "Below 80% Citywide MFI", we did find that Zip Codes in the "Above 120%" category produced more than 50% of the request volume in the sample data. 
 
 ## Machine Learning Model
 ### Preliminary Data Preprocessing
@@ -84,6 +89,18 @@ Finally, when it comes to Response Time, I found that generally calls are closed
 ![Image of Classification Report](https://github.com/GyanwaliEliza/Finalproject/blob/main/Classification_Report.png)
 
 - Overall, this model has adequate predictive power for future 311 call data but has room for improvements with further feature engineering. 
+
+## Recommendations
+At the end of the project, we have several recommendations to deepen the analysis. 
+1. Collect better service delivery data.
+  -Currently the analysis lacks depth in what a "Closed" service request means. For some departments, this could mean that a resident's recycling or trash was picked up. For others, this could mean simply that the complaint was logged within another database. This discrepancy in staff-time or resources is likely to be one of the major factors in the total response time, and also in making the analysis actionable for the City of Austin. With this additional detail it would both deepen the analysis, as well as provide another layer of prediction regarding department staff and resource needs.
+2. Add dimension of “Past Investment” in zip codes
+  -One of the major missing pieces in the analysis is additional Zip Code data. The census data was added relatively late in the project, and does point to some level of relationship between Zip Code and request volume. Across all of the years of the dataset, the Zip Codes with the largest request volumes remained largely consistent. Additional analysis on what already exists, or has been spent within these neighborhoods could provide additional detail to understand if, for example, there is a relationship betweeen development and 311 requests, or past investment in the form of capital improvements and 311 requests.
+3. More granular analysis on households making requests, or those who receive Code Enforcement complaints
+  -This was a major factor we would've liked to include, but did not have the time or resources to add for this project. In the early planning of the project, we discussed possibly using home values, or other real estate factors, as well as their change over time, to get at changing Zip Code characteristics. However, the real estate data was largely behind paid APIs. One very labor-intensive idea would be to pair street address logs with the Travis County Appraisal data. Currently, the model seeks to use Zip Code Median Family Income as a proxy, however this does not account for neighborhood-to-neighborhood, or even home-to-home differences.
+4. Geographic or other Zip Code grouping categories to account for historical and additional context missed by the model
+  -This recommendation connects back to #2. Additional historical context regarding these Zip Codes would help to explain the on-the-ground reality that drives these requests. In Austin, and every other major American city, there is a long history that informs the way our city looks today. From the 1928 Master Plan which intentionally segregated Austin, to the construction of Interstate 35 through the middle of the city, and into major City planning documents in the 1950s and 1980s, the City government and private actors have made active decisions which have resulted in the Austin we see today. Including some dimension of this, whether it be in "Current or Past Industrial Zoning", or "East v. West", or "Gentrifying or Not", will serve to ensure this anaysis does not work ahistorically. 
+
 
 ## Communication
 #### Communication done in Slack & in breakout rooms during class time. 

@@ -23,6 +23,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
   <title>Austin 311 Calls</title>
  
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -50,7 +51,7 @@
     <div class ="row">
       <div class = "col-md-5 text-left bg-grey">
         <p>Here we have a dashboard displaying 311 calls in Austin over the past several years. </p>
-        <p>We wanted to develop a model that could help predict the time needed to fuffil a service request. To learn more about our model and initial analysis click <a href="eda.html">here.</a></p>
+        <p>We wanted to develop a model that could help predict the time needed to fuffil a service request. To learn more about our model and initial analysis click <a href="eda.html"><b>here.</b></a></p>
         <p>Use the filters below to see the frequency of different ways Austin receives Service Requests.</p>
       </div>
       
@@ -90,19 +91,15 @@
         <div id="gauge"></div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-12">
-        <div id="bubble">
-  
-        </div>
-      </div>
-    </div>
+    <div id="mapChange">
+      <input type="submit" style ="outline: 0;">
+  </div>
   </div>
   <div id="mapid"></div> 
   <!--<script src="jquery-3.5.1.min.js"></script>-->
   
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src='https://d3js.org/d3.v4.min.js' charset="utf-8"></script>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <script src ="config.js"></script>

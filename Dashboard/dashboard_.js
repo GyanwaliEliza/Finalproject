@@ -27,8 +27,7 @@ function init() {
 
     master_data = data;
 
-    window.localStorage.setItem('data',master_data);
-    console.log(window.localStorage.getItem('data'));
+
     var sr_type = [];
 
     data.forEach( (call) => { 
@@ -63,11 +62,17 @@ init();
    console.log(new_call_type);
 
    data_displayed = master_data.filter(call => call.sr_method_received_desc == new_call_type);
+
+   window.sessionStorage.setItem('data',JSON.stringify(data_displayed));
+
+  //  document.getElementById("mapChange").click();
+  // console.log(window.sessionStorage.getItem('data'));
    
-   console.log("New filtered data");
-   console.log(data_displayed);
+  // console.log("New filtered data");
+  // console.log(data_displayed);
    buildSummaryTable(data_displayed);
-   buildMap(data_displayed);
+   
+   //buildMap(data_displayed);
   
 
    // Possible fix was to refresh iframe to render new markers no luck ye

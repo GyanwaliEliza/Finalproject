@@ -174,7 +174,7 @@ test_data = [{
   }]
 var mymap = L.map('mapid').setView([30.2729 , -97.7444], 12.25);
 
-
+// var change = d3.select("#mapChange")
 
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -193,19 +193,20 @@ var array = [];
 //     radius: 500
 //     }).addTo(mymap);
 
-function buildMap(data){
+
+working_data = JSON.parse(window.sessionStorage.getItem('data'))
+
+//function buildMap(data){
 
     console.log(mymap);
-    console.log(data_displayed);
-    L.marker([30.19563848, -97.82181439], {
-        color: 'red',
-        fillColor: '#f03',
-        fillOpacity: 0.5,
-        radius: 500
-        }).addTo(mymap);
+    //console.log(data_displayed);
 
+
+// change.on("click",buildMap(working_data));
+
+// function buildMap() {
     console.log("list of lat,lng to mark markers at")
-    data.forEach( (call) => {
+    working_data.forEach( (call) => {
             
             
             console.log(call.sr_location_lat, call.sr_location_long);
@@ -233,11 +234,14 @@ function buildMap(data){
                     radius: 500
                     });
 
+                    //content = L.bindPopup(L.popup({maxWidth:250}).setContent(""))
+
                     mark.addTo(mymap)
             }
             
-        })
-    };
+        });
+// }
+//    };
 
 
 

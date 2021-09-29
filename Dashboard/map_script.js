@@ -196,34 +196,8 @@ var array = [];
 
 working_data = JSON.parse(window.sessionStorage.getItem('data'))
 
-//function buildMap(data){
-
-    console.log(mymap);
-    //console.log(data_displayed);
-
-
-// change.on("click",buildMap(working_data));
-
-// function buildMap() {
     console.log("list of lat,lng to mark markers at")
     working_data.forEach( (call) => {
-            
-            
-            console.log(call.sr_location_lat, call.sr_location_long);
-          
-            // lat = parseFloat(call.sr_location_lat) * 1;
-            // lng = parseFloat(call.sr_location_long) * 1;
-            
-            // console.log(`Lat ${lat}`);
-            // console.log(`long: ${lng}`);
-            // console.log(typeof lat);
-        
-            // L.marker([lat,lng], {
-            //         color: 'red',
-            //         fillColor: '#f03',
-            //         fillOpacity: 0.5,
-            //         radius: 500
-            //         }).addTo(mymap);
             
             if (parseFloat(call.sr_location_lat) && parseFloat(call.sr_location_long)){
 
@@ -232,7 +206,7 @@ working_data = JSON.parse(window.sessionStorage.getItem('data'))
                     fillColor: '#f03',
                     fillOpacity: 0.5,
                     radius: 500
-                    });
+                    }).bindPopup("<b>Request Type:</b> " + call.sr_type_desc + "\n<b>Method Received:</b> " + call.sr_method_received_desc);
 
                     //content = L.bindPopup(L.popup({maxWidth:250}).setContent(""))
 

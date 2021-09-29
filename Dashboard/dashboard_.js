@@ -5,13 +5,7 @@ function init() {
   master_data = []
   data_displayed = []
 
-  phone_layer = {}
-  spot311_layer = {}
-  web_layer = {}
-  mobile_layer = {}
-  other_layer = {}
-  email_layer = {}
-  field_request_layer = {}
+
   // Grab a reference to the dropdown select element
   var selector = d3.select("#selDataset");
 
@@ -26,7 +20,7 @@ function init() {
   }).done(function(data) {
 
     master_data = data;
-
+    
 
     var sr_type = [];
 
